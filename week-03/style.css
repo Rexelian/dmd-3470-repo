@@ -1,0 +1,16 @@
+div {
+  border: 1px solid black;
+}
+
+section {
+  border: 1px solid black;
+}
+
+@media (min-width: 350px) {
+  section {
+    display: flex;
+  }
+  div {
+    width: 33%;
+  }
+}
