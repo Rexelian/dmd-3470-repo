@@ -87,6 +87,7 @@ textarea {
 header {
   padding: 10%;
   display: flex;
+  justify-content: center;
 }
 
 a.button {
