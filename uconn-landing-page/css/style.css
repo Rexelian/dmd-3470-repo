@@ -84,6 +84,50 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+header {
+  padding: 10%;
+  display: flex;
+}
+
+a.button {
+  width: 30%;
+}
+
+.head-txt {
+  max-width: 50%;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin: 0% 10% 0% 10%;
+}
+
+.card {
+  padding: 5%;
+}
+
+.red-band {
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+}
+
+.body-end {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  padding: 5%;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
