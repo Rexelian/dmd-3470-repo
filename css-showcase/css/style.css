@@ -83,6 +83,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -95,6 +102,7 @@ header {
   display: flex;
   justify-content: center;
   gap: 50px;
+  max-width: 1100px;
 }
 
 @media (max-width:700px) {
@@ -106,6 +114,7 @@ header {
 
 .card-container {
   /*outline: 2px solid lime;*/
+  flex-shrink: 0;
   height: 500px;
   width: 500px;
   display: flex;
@@ -128,14 +137,18 @@ header {
 }
 
 .card-container::before {
+  pointer-events: none;
   content: "";
-  position: absolute;
+  position: fixed;
+  overflow: visible;
+  inset: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: url('../img/poke-bg-trans.png');
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   opacity: 0.5; /* Control the transparency of the top layer */
 }
@@ -239,13 +252,25 @@ header {
     transform: rotateY(0deg);
     opacity: 1;
   }
+}
 
+.top-cont.description {
+   max-width: 600px;
+}
 
+.bottom-cont {
+  max-width: 1100px;
+}
+
+footer.description {
+  display: flex;
+  flex-direction: column;
 }
 
 .description {
   margin: 10px;
   padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 /* ==========================================================================
    Helper classes
