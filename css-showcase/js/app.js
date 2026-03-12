@@ -64,6 +64,10 @@ const observer = new IntersectionObserver(entries => {
 cards.forEach(card => observer.observe(card));
 */
 
+document.getElementById("toggle-bg-btn").addEventListener("click", () => {
+  const cards = document.getElementById("cards");
+  cards.classList.toggle("poke-bg");
+});
 
 const flipSound = new Audio('sound/682449__geoff-bremner-audio__card_deck_flick_click.mp3'); 
 flipSound.volume = 0.75; // optional: adjust volume
