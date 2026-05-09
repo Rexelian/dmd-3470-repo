@@ -17,6 +17,10 @@ html {
   line-height: 1.4;
 }
 
+html, body {
+  height: 100%;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -83,17 +87,23 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  margin: 0;
+  flex-grow: 1;
 }
 
 
 
 
 #nav-menu {
-  background-color: #222;
+  background-color: #3c3c3c;
   position: absolute;
   z-index: 2;
   /*left: 220px;*/
@@ -109,7 +119,7 @@ body {
   pointer-events: none;
   transition: opacity 0.2s ease;
   width: 100%;
-
+  padding-top: 10px;
 }
 
 
@@ -130,6 +140,17 @@ body {
   background: none;
   flex: 1;
   margin: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+}
+
+#nav-menu button:hover {
+  background-color: rgb(84, 84, 84);
+}
+
+#nav-menu button:active {
+  background-color: rgb(146, 146, 146);
 }
 
 #nav-menu.visible {
@@ -153,9 +174,16 @@ body {
 }
 
 
-.container-1 {
-    display: flex;
-    flex-direction: column;
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 #topbar-1 {
@@ -233,6 +261,18 @@ body {
   .sidebar-1 ul {
     flex-direction: row;
   }
+
+  #nav-menu {
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  #nav-menu ul {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 
@@ -265,7 +305,6 @@ body {
 .container-alx {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     width: stretch;
 }
 
