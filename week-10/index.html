@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlowSite - Modern Business Solutions</title>
+    <meta name="description" content="SlowSite provides comprehensive business solutions and services for modern enterprises.">
+    
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="vendor/bootstrap.css">
+    <link rel="stylesheet" href="vendor/font-awesome.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/unused-styles.css">
+    
+    <!-- Additional styles -->
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    
+    <!-- JavaScript files -->
+    <script src="vendor/jquery.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/unused-script.js"></script>
+    
+    <!-- Initialization script -->
+    <script>
+        // This script runs before the page loads, blocking rendering
+        console.log('Head script executing - blocking page render!');
+        var startTime = performance.now();
+        
+        // Simulate some heavy computation
+        function heavyComputation() {
+            var result = 0;
+            for (var i = 0; i < 1000000; i++) {
+                result += Math.sqrt(i);
+            }
+            return result;
+        }
+        
+        heavyComputation();
+        console.log('Heavy computation completed in:', (performance.now() - startTime).toFixed(2), 'ms');
+    </script>
+</head>
+<body>
+    <!-- Loading overlay (not actually needed) -->
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- 
+        HEADER SECTION
+    -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="site-logo">
+                <i class="logo-icon">⚡</i>
+                <h1 class="logo-text">SlowSite</h1>
+            </a>
+            
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-menu-item active">
+                        <a href="#hero" class="nav-menu-link">Home</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#about" class="nav-menu-link">About</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#features" class="nav-menu-link">Features</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#gallery" class="nav-menu-link">Gallery</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="#contact" class="nav-menu-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span class="mobile-menu-toggle-bar"></span>
+                <span class="mobile-menu-toggle-bar"></span>
+                <span class="mobile-menu-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <img src="images/hero.jpg" 
+             alt="Hero background" 
+             loading="eager"
+             width="3200" 
+             height="1800"
+             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+        
+        <div class="hero-content">
+            <h1 class="hero-title animated fade-in-up">Welcome to SlowSite</h1>
+            <p class="hero-subtitle animated fade-in-up delay-1">Modern Business Solutions for the Digital Age</p>
+            <a href="#about" class="hero-button animated fade-in-up delay-2">Learn More</a>
+        </div>
+    </section>
+    
+    <!-- 
+        ABOUT SECTION
+    -->
+    <section id="about" class="about-section section">
+        <div class="container">
+            <h2 class="section-title animated fade-in">About SlowSite</h2>
+            <div class="about-content">
+                <p class="about-text animated fade-in-up">
+                    SlowSite is a modern business solutions provider specializing in comprehensive
+                    enterprise services. We offer cutting-edge technology solutions designed to meet
+                    the evolving needs of today's businesses.
+                </p>
+                <p class="about-text animated fade-in-up delay-1">
+                    Our team of experts delivers innovative solutions across multiple industries,
+                    helping organizations achieve their digital transformation goals with state-of-the-art
+                    technology and best-in-class service.
+                </p>
+                <p class="about-text animated fade-in-up delay-2">
+                    With a focus on quality, reliability, and customer satisfaction, we're committed
+                    to delivering exceptional results that drive business success.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 
+        FEATURES SECTION
+    -->
+    <section id="features" class="features-section section">
+        <div class="container">
+            <h2 class="section-title animated fade-in">Our Key Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card animated fade-in-up">
+                    <div class="feature-icon">🐌</div>
+                    <h3 class="feature-title">Comprehensive Solutions</h3>
+                    <p class="feature-description">
+                        We provide complete, full-featured solutions with extensive resources
+                        and comprehensive libraries to meet all your business needs.
+                    </p>
+                </div>
+                
+                <div class="feature-card animated fade-in-up delay-1">
+                    <div class="feature-icon">🖼️</div>
+                    <h3 class="feature-title">Visual Excellence</h3>
+                    <p class="feature-description">
+                        High-resolution imagery and premium visual content that showcases
+                        your brand with stunning clarity and detail.
+                    </p>
+                </div>
+                
+                <div class="feature-card animated fade-in-up delay-2">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">Feature-Rich Platform</h3>
+                    <p class="feature-description">
+                        Extensive functionality with everything you might need, including
+                        advanced tools and comprehensive capabilities.
+                    </p>
+                </div>
+                
+                <div class="feature-card animated fade-in-up">
+                    <div class="feature-icon">🔗</div>
+                    <h3 class="feature-title">Modular Architecture</h3>
+                    <p class="feature-description">
+                        Flexible, component-based design with multiple specialized modules
+                        working together for maximum flexibility.
+                    </p>
+                </div>
+                
+                <div class="feature-card animated fade-in-up delay-1">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">Readable Code Base</h3>
+                    <p class="feature-description">
+                        Clean, well-documented code with detailed comments and clear
+                        formatting for easy understanding and maintenance.
+                    </p>
+                </div>
+                
+                <div class="feature-card animated fade-in-up delay-2">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Self-Hosted Resources</h3>
+                    <p class="feature-description">
+                        All resources hosted locally for complete control and independence
+                        from external content delivery networks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section section">
+        <div class="container">
+            <h2 class="section-title animated fade-in">Image Gallery</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Explore our collection of high-quality images showcasing our work and services.
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item animated zoom-in">
+                    <img src="images/gallery-1.png" 
+                         alt="Gallery image 1" 
+                         class="gallery-image"
+                         loading="eager"
+                         width="3000"
+                         height="2000">
+                    <div class="gallery-overlay">
+                        <p class="gallery-caption">Image 1</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animated zoom-in delay-1">
+                    <img src="images/gallery-2.png" 
+                         alt="Gallery image 2" 
+                         class="gallery-image"
+                         loading="eager"
+                         width="3000"
+                         height="2000">
+                    <div class="gallery-overlay">
+                        <p class="gallery-caption">Image 2</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animated zoom-in delay-2">
+                    <img src="images/gallery-3.png" 
+                         alt="Gallery image 3" 
+                         class="gallery-image"
+                         loading="eager"
+                         width="3000"
+                         height="2000">
+                    <div class="gallery-overlay">
+                        <p class="gallery-caption">Image 3</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animated zoom-in">
+                    <img src="images/gallery-4.png" 
+                         alt="Gallery image 4" 
+                         class="gallery-image"
+                         loading="eager"
+                         width="3000"
+                         height="2000">
+                    <div class="gallery-overlay">
+                        <p class="gallery-caption">Image 4</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animated zoom-in delay-1">
+                    <img src="images/gallery-5.png" 
+                         alt="Gallery image 5" 
+                         class="gallery-image"
+                         loading="eager"
+                         width="3000"
+                         height="2000">
+                    <div class="gallery-overlay">
+                        <p class="gallery-caption">Image 5</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animated zoom-in delay-2">
+                    <img src="images/gallery-6.png" 
+                         alt="Gallery image 6" 
+                         class="gallery-image"
+                         loading="eager"
+                         width="3000"
+                         height="2000">
+                    <div class="gallery-overlay">
+                        <p class="gallery-caption">Image 6</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 
+        CONTACT SECTION
+    -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <h2 class="section-title animated fade-in">Contact Us</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                This is a demo contact form. No data is actually submitted.
+            </p>
+            
+            <form class="contact-form animated fade-in-up" action="#" method="post">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" 
+                           id="name" 
+                           name="name" 
+                           class="form-control" 
+                           placeholder="Enter your name"
+                           required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           class="form-control" 
+                           placeholder="Enter your email"
+                           required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" 
+                              name="message" 
+                              class="form-control" 
+                              placeholder="Enter your message"
+                              required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- 
+        FOOTER SECTION
+    -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-column-title">About SlowSite</h3>
+                    <p class="footer-column-description">
+                        A comprehensive business solutions provider dedicated to delivering
+                        exceptional service and innovative technology solutions.
+                    </p>
+                    <div class="social-media-links">
+                        <a href="#" class="social-media-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-media-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-media-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-media-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item">
+                            <a href="#hero" class="footer-link">Home</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#about" class="footer-link">About</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#features" class="footer-link">Features</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#gallery" class="footer-link">Gallery</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#contact" class="footer-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Contact Info</h3>
+                    <ul class="contact-info">
+                        <li class="contact-info-item">
+                            <i class="contact-info-icon">📍</i>
+                            <span class="contact-info-text">123 Slow Street, Lagville, USA</span>
+                        </li>
+                        <li class="contact-info-item">
+                            <i class="contact-info-icon">📧</i>
+                            <span class="contact-info-text">slow@slowsite.test</span>
+                        </li>
+                        <li class="contact-info-item">
+                            <i class="contact-info-icon">📱</i>
+                            <span class="contact-info-text">+1 (555) SLOW-WEB</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Newsletter</h3>
+                    <p class="footer-column-description">
+                        Subscribe to get updates on performance best practices (demo only).
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" 
+                               class="newsletter-input" 
+                               placeholder="Your email"
+                               required>
+                        <button type="submit" class="newsletter-button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    &copy; 2026 SlowSite. All rights reserved.
+                </p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#" class="footer-bottom-link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer-bottom-link">Terms of Service</a></li>
+                    <li><a href="#" class="footer-bottom-link">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Back to top">
+        ↑
+    </button>
+    
+    <!-- Additional Scripts -->
+    <script>
+        // Page load complete
+        console.log('Page fully loaded!');
+        
+        // Log performance metrics
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (window.performance && window.performance.timing) {
+                    var perfData = window.performance.timing;
+                    var loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                    console.log('='.repeat(60));
+                    console.log('PERFORMANCE METRICS');
+                    console.log('='.repeat(60));
+                    console.log('Total Page Load Time:', loadTime, 'ms');
+                    console.log('DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.navigationStart, 'ms');
+                    console.log('='.repeat(60));
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

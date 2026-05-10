@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Responsive Images Exercise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#698b9c',
+                        secondary: '#9B59B6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-cyan-50 to-blue-50 min-h-screen">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <!-- Header -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 lg:p-10 mb-8">
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Responsive Images &amp; Backgrounds</h1>
+            
+            <figure class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-primary rounded-lg p-6 mb-6">
+                <blockquote class="text-lg lg:text-xl text-gray-700 italic">
+                    <code class="bg-white px-2 py-1 rounded text-sm font-mono">srcset</code> if you're lazy, 
+                    <code class="bg-white px-2 py-1 rounded text-sm font-mono">picture</code> if you're crazy™
+                </blockquote>
+                <figcaption class="mt-3 text-gray-600">
+                    — <a href="https://twitter.com/wilto" class="text-primary hover:text-blue-600 transition-colors underline">Mat Marquis</a>
+                </figcaption>
+            </figure>
+            
+            <p class="text-gray-700 leading-relaxed text-lg">
+                Modern web design requires serving optimized images across a vast range of devices and screen sizes. 
+                This exercise explores three complementary techniques for responsive imagery: the <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">&lt;picture&gt;</code> element 
+                for art-directed images, CSS <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">background-size</code> for controlling background image presentation, and 
+                <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">image-set()</code> for resolution-aware background images.
+            </p>
+        </div>
+
+        <!-- Assessment Rubric -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 lg:p-10 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <svg class="w-8 h-8 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                </svg>
+                Assessment Rubric
+            </h2>
+
+            
+            <div class="rubric grid gap-6 md:grid-cols-2">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Exercise 1: Picture Element</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Picture element properly implemented with correct markup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Source elements use correct media queries at 945px and 1100px breakpoints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Fallback img element included with appropriate default image</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>All three images load correctly at different viewport sizes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Exercise 2: Background-Size</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Both contain and cover demonstrations implemented</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Proper use of background-position and background-repeat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Responsive background images change at appropriate breakpoints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Visual differences between contain and cover are clearly observable</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Exercise 3: Image-Set</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Image-set() syntax correctly implemented</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Multiple resolution variants (1x, 2x, 3x) specified</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Background image properly displays in demo container</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border-2 border-amber-200">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Code Quality &amp; Submission</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Valid HTML and CSS</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span>Passes automated tests</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCISE 1: PICTURE ELEMENT -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 lg:p-10 mb-8">
+            <section class="exercise">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl font-bold">1</span>
+                    The &lt;picture&gt; Element
+                </h2>
+                
+                <!-- Two-column layout: instructions left, image right -->
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Left column: Instructions -->
+                    <div>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Learning Objectives</h3>
+                            <ul class="space-y-2 text-gray-700 ml-6 list-disc">
+                                <li>Understand when and why to use the <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">&lt;picture&gt;</code> element for art direction</li>
+                                <li>Implement media queries within <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">&lt;source&gt;</code> elements for responsive image switching</li>
+                                <li>Provide appropriate fallback images for older browsers</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Task</h3>
+                            <p class="text-gray-700 mb-4">
+                                The <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">&lt;picture&gt;</code> element provides explicit control over which image is displayed at different viewport sizes.
+                                Using the three images in the <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">images/</code> folder (<code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">art-medium.jpg</code>, <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">art-large.jpg</code>, 
+                                <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">art-extra-large.jpg</code>), implement a responsive picture element in the placeholder to the right:
+                            </p>
+                            <ul class="space-y-2 text-gray-700 ml-6 list-disc">
+                                <li>Displays the large image when the viewport is at least 945px wide</li>
+                                <li>Displays the extra large image when the viewport is at least 1100px wide</li>
+                                <li>Provides a default/fallback image for smaller viewports or older browsers</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                            <p class="text-gray-700">
+                                <strong class="text-blue-700">Hint:</strong> Research the <code class="bg-white px-2 py-1 rounded text-sm font-mono">media</code> attribute on <code class="bg-white px-2 py-1 rounded text-sm font-mono">&lt;source&gt;</code> elements and the proper order of source declarations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right column: Image placeholder -->
+                    <div class="flex items-center">
+                        <aside class="picture-placeholder w-full p-8 bg-gradient-to-br from-blue-50 to-indigo-100 border-4 border-dashed border-blue-300 rounded-xl">
+                            <div class="text-center">
+                                <svg class="w-16 h-16 mx-auto text-blue-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <p class="text-blue-600 font-semibold text-lg mb-2">Add your &lt;picture&gt; element here</p>
+                                <p class="text-blue-500 text-sm">Replace this placeholder with your picture element implementation</p>
+                            </div>
+                            <!-- TODO: Replace this placeholder with your picture element -->
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- EXERCISE 2: BACKGROUND-SIZE -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 lg:p-10 mb-8">
+            <section class="exercise">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl font-bold">2</span>
+                    Background-Size (Contain vs. Cover)
+                </h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-primary mb-3">Learning Objectives</h3>
+                    <ul class="space-y-2 text-gray-700 ml-6 list-disc">
+                        <li>Understand the difference between <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">background-size: contain</code> and <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">background-size: cover</code></li>
+                        <li>Apply appropriate background sizing strategies for different use cases</li>
+                        <li>Implement responsive background images using media queries</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-primary mb-3">Task</h3>
+                    <p class="text-gray-700 mb-4">
+                        Create two visual demonstrations showing the difference between <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">contain</code> and <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">cover</code>. 
+                        The containers (<code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">.bg-contain-demo</code> and <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">.bg-cover-demo</code>) are provided below.
+                    </p>
+                    
+                    <p class="text-gray-700 mb-2 font-semibold">Your implementation should:</p>
+                    <ul class="space-y-2 text-gray-700 ml-6 list-disc mb-6">
+                        <li>Apply different background images from the <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">images/</code> folder (bg-small.jpg, bg-medium.jpg, bg-large.jpg) 
+                            at different viewport breakpoints</li>
+                        <li>Use <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">background-size: contain</code> on the first demo to show the entire image (may leave empty space)</li>
+                        <li>Use <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">background-size: cover</code> on the second demo to fill the container (may crop the image)</li>
+                        <li>Include <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">background-position: center</code> and <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">background-repeat: no-repeat</code> for both</li>
+                    </ul>
+                </div>
+
+                <div class="background-demos grid md:grid-cols-2 gap-6 my-8">
+                    <div class="bg-contain-demo">
+                        <p class="demo-label">Contain: Full image visible, may leave empty space</p>
+                    </div>
+                    <div class="bg-cover-demo">
+                        <p class="demo-label">Cover: Fills container, may crop image edges</p>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                    <p class="text-gray-700">
+                        <strong class="text-green-700">Hint:</strong> Consider which sizing approach is better for logos vs. hero images.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- EXERCISE 3: IMAGE-SET -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 lg:p-10 mb-8">
+            <section class="exercise">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl font-bold">3</span>
+                    Image-Set for High-DPI Displays
+                </h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-primary mb-3">Learning Objectives</h3>
+                    <ul class="space-y-2 text-gray-700 ml-6 list-disc">
+                        <li>Understand device pixel ratio and high-DPI (Retina) displays</li>
+                        <li>Implement <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">image-set()</code> to serve appropriate resolution images</li>
+                        <li>Optimize image delivery for different screen densities</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-primary mb-3">Task</h3>
+                    <p class="text-gray-700 mb-4">
+                        The <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">image-set()</code> function allows browsers to select the most appropriate image based on the device's 
+                        pixel density. Modern smartphones and laptops often have 2x or 3x pixel densities, requiring higher resolution images 
+                        to appear crisp.
+                    </p>
+
+                    <p class="text-gray-700 mb-2 font-semibold">Implement <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">image-set()</code> on the <code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">.image-set-demo</code> container using the pattern images:</p>
+                    <ul class="space-y-2 text-gray-700 ml-6 list-disc mb-6">
+                        <li><code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">pattern-1x.jpg</code> for standard displays (1x)</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">pattern-2x.jpg</code> for high-DPI displays (2x)</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded text-sm font-mono">pattern-3x.jpg</code> for ultra-high-DPI displays (3x)</li>
+                    </ul>
+                </div>
+
+                <div class="image-set-demo my-8">
+                    <p class="demo-label">This background uses image-set() for resolution switching</p>
+                </div>
+
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded mb-4">
+                    <p class="text-gray-700">
+                        <strong class="text-purple-700">Hint:</strong> Research the modern CSS <code class="bg-white px-2 py-1 rounded text-sm font-mono">image-set()</code> syntax. You do not need vendor prefixes for this exercise.
+                    </p>
+                </div>
+                <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded">
+                    <p class="text-gray-700">
+                        <strong class="text-indigo-700">Note:</strong> To test this properly, you'll need a high-DPI display or use browser DevTools to simulate different pixel ratios.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Submission -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-lg p-6 lg:p-10 text-white text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Submit?</h2>
+            <p class="text-lg mb-4">
+                When complete, ensure your implementation passes all automated tests by running <code class="bg-white/20 px-3 py-1 rounded font-mono">npm test</code>.
+            </p>
+            <p class="text-lg">
+                Publish your page and submit the link to HuskyCT.
+            </p>
+        </div>
+    </main>
+</body>
+</html>

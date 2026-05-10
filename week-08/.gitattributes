@@ -1,0 +1,3 @@
+# Encrypt solution files so students cannot access them
+solution.html filter=git-crypt diff=git-crypt
+css/solution.css filter=git-crypt diff=git-crypt

@@ -1,0 +1,101 @@
+/* ============================================
+   Tailwind-Enhanced Custom Styles
+   ============================================ */
+
+/* Picture Placeholder - Visual Helper for Students */
+.picture-placeholder {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Demos Container */
+.bg-contain-demo,
+.bg-cover-demo {
+    min-height: 300px;
+    border: 3px solid #698b9c;
+    border-radius: 12px;
+    position: relative;
+    /* TODO: Students add background properties here
+     * Example structure:
+     * background-image: url('../images/your-image.jpg');
+     * background-position: center;
+     * background-repeat: no-repeat;
+     * background-size: contain; (or cover)
+     */
+}
+
+/* Image-Set Demo Container */
+.image-set-demo {
+    width: 100%;
+    height: 400px;
+    border: 3px solid #9B59B6;
+    border-radius: 12px;
+    position: relative;
+    /* TODO: Students add image-set() here
+     * Example structure:
+     * background-image: image-set(
+     *   url('../images/your-1x.jpg') 1x,
+     *   url('../images/your-2x.jpg') 2x,
+     *   url('../images/your-3x.jpg') 3x
+     * );
+     * background-position: center;
+     * background-repeat: no-repeat;
+     * background-size: cover;
+     */
+}
+
+/* Demo Labels */
+.demo-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 0 0 8px 8px;
+    font-weight: 500;
+}
+
+/* ============================================
+   STUDENT WORK AREA - MEDIA QUERIES
+   ============================================ */
+
+/* TODO: Add media queries for Exercise 1 (Picture Element)
+ * The picture element in the HTML will handle image switching,
+ * but you may want to add responsive styles for the aside container.
+ */
+
+/* TODO: Add media queries for Exercise 2 (Background Images)
+ * Example structure:
+ * 
+ * Mobile (default): bg-small.jpg
+ * @media (min-width: 700px) {
+ *   .bg-contain-demo, .bg-cover-demo {
+ *     background-image: url('../images/bg-medium.jpg');
+ *   }
+ * }
+ * 
+ * @media (min-width: 1000px) {
+ *   .bg-contain-demo, .bg-cover-demo {
+ *     background-image: url('../images/bg-large.jpg');
+ *   }
+ * }
+ */
+
+/* TODO: Set background-size for contain demo */
+/* .bg-contain-demo {
+ *   background-size: contain;
+ * }
+ */
+
+/* TODO: Set background-size for cover demo */
+/* .bg-cover-demo {
+ *   background-size: cover;
+ * }
+ */

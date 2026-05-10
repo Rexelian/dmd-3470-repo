@@ -43,36 +43,48 @@ p {
 
 body {
     /* TODO: Set display to grid */
-    
+    display: grid;
     /* TODO: Define grid-template-columns for mobile (single column) */
-    
+    grid-template-columns: 1fr;
     /* TODO: Define grid-template-areas for mobile stacking order */
-    
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
     /* Optional: You can use height: 100vh on the container if desired */
+    height: 100vh;
     
     /* TODO: Set grid-template-rows (remember: no height or min-height values!) */
+    grid-template-rows: 3fr 1fr 15fr 1fr 1fr;
 }
 
 /* TODO: Assign each section to its grid area using grid-area property */
 
 header {
     /* TODO: grid-area */
+    grid-area: header;
 }
 
 nav {
     /* TODO: grid-area */
+    grid-area: nav;
 }
 
 main {
     /* TODO: grid-area */
+    grid-area: main;
 }
 
 aside {
     /* TODO: grid-area */
+    grid-area: aside;
 }
 
 footer {
     /* TODO: grid-area */
+    grid-area: footer;
 }
 
 
@@ -168,9 +180,19 @@ button:hover {
 
 /* TODO: Add media query for desktop breakpoint */
 /* Example: @media (min-width: 768px) { ... } */
-
+@media (min-width: 600px) {
+    body {
     /* TODO: Redefine grid-template-columns for desktop (3 columns recommended) */
+    grid-template-columns: 1fr 3fr 1fr;
     
     /* TODO: Redefine grid-template-areas for desktop Holy Grail layout */
+    grid-template-areas: 
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
     
     /* TODO: Redefine grid-template-rows if needed */
+    grid-template-rows: 1fr 5fr 1fr;
+
+    }
+}

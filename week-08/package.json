@@ -1,0 +1,22 @@
+{
+  "name": "picture-element",
+  "version": "1.0.0",
+  "description": "A very simple <picture> element exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:solution": "TEST_FILE=solution npx playwright test",
+    "test:student": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.uconn.edu/bpd01001/picture-element.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.20.1",
+    "canvas": "^3.2.1",
+    "express": "^4.17.3"
+  }
+}
