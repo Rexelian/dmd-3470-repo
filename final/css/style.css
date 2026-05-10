@@ -15,6 +15,8 @@
   --card-bg:      #ffffff;
   --radius:       16px;
   --radius-lg:    28px;
+  --radius-fluid: clamp(8px, 3vw, 16px);
+  --radius-lg-fluid: clamp(14px, 5vw, 28px);
 }
 
 html { scroll-behavior: smooth; }
@@ -442,13 +444,13 @@ section { padding: 70px 24px; }
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
-  border-radius: 36px;
+  border-radius: var(--radius-lg-fluid);
   position: relative;
 }
 
 .phone-mockup img {
   background: transparent;
-  border-radius: 50px;
+  border-radius: var(--radius-lg-fluid);
   max-width: 80%;
   height: auto;
   display: block;
