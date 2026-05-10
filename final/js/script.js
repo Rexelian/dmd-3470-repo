@@ -23,7 +23,7 @@ fadeEls.forEach((el) => observer.observe(el));
 const playBtn = document.querySelector('.play-btn');
 if (playBtn) {
   playBtn.addEventListener('click', () => {
-    alert('Video player would launch here!');
+    window.open("https://www.youtube.com/watch?v=itYW-9td0RQ", "_blank");
   });
 }
 
