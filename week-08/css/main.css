@@ -11,7 +11,24 @@
 }
 
 /* Background Demos Container */
-.bg-contain-demo,
+.bg-contain-demo {
+    min-height: 300px;
+    border: 3px solid #698b9c;
+    border-radius: 12px;
+    position: relative;
+    /* TODO: Students add background properties here
+     * Example structure:
+     * background-image: url('../images/your-image.jpg');
+     * background-position: center;
+     * background-repeat: no-repeat;
+     * background-size: contain; (or cover)
+     */
+     background-image: url('../images/bg-small.jpg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: contain;
+}
+
 .bg-cover-demo {
     min-height: 300px;
     border: 3px solid #698b9c;
@@ -24,6 +41,10 @@
      * background-repeat: no-repeat;
      * background-size: contain; (or cover)
      */
+     background-image: url('../images/bg-small.jpg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
 }
 
 /* Image-Set Demo Container */
@@ -44,6 +65,16 @@
      * background-repeat: no-repeat;
      * background-size: cover;
      */
+
+     background-image: image-set(
+        url('../images/pattern-1x.jpg') 1x,
+        url('../images/pattern-2x.jpg') 2x,
+        url('../images/pattern-3x.jpg') 3x
+     );
+
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
 }
 
 /* Demo Labels */
@@ -87,6 +118,18 @@
  *   }
  * }
  */
+
+@media (min-width: 700px) {
+    .bg-contain-demo, .bg-cover-demo {
+        background-image: url('../images/bg-medium.jpg');
+    }
+}
+
+@media (min-width: 1000px) {
+    .bg-contain-demo, .bg-cover-demo {
+        background-image: url('../images/bg-large.jpg');
+    }
+}
 
 /* TODO: Set background-size for contain demo */
 /* .bg-contain-demo {
